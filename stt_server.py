@@ -8,8 +8,8 @@ from typing import Optional
 
 app = FastAPI()
 
-print("Loading Whisper model on CPU...")
-whisper_model = WhisperModel("medium", device="cpu", compute_type="int8")
+print("Loading Whisper model on: device=cuda, compute_type=int8...")
+whisper_model = WhisperModel("medium", device="cuda", compute_type="int8")
 print("Whisper ready.")
 
 @app.post("/v1/audio/transcriptions")
